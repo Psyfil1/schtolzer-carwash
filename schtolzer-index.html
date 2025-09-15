@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schtolzer — Автомойка · Детейлинг · Подольск</title>
+<meta name="description" content="Schtolzer — автомойка в Подольске: бесконтактная и ручная мойка, химчистка салона, полировка, выезд на дом, чернение резины, нанесение воска. Быстрая запись в WhatsApp.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f15;
+  --panel:rgba(255,255,255,.06);
+  --text:#e8f0ff;
+  --muted:#a9b5c7;
+  --brand:#21D4FD;
+  --brand2:#B721FF;
+  --ok:#34d399;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --radius:18px;
+  --shadow:0 18px 50px rgba(0,0,0,.35);
+  --glass:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  --grad: radial-gradient(1600px 800px at 10% -10%, rgba(183,33,255,.18), transparent 50%),
+          radial-gradient(1200px 700px at 90% 10%, rgba(33,212,253,.16), transparent 60%),
+          radial-gradient(900px 1000px at 50% 120%, rgba(33,212,253,.12), transparent 60%);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial;scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{padding:72px clamp(16px,4vw,48px)}
+.container{max-width:1180px;margin:0 auto}
+/* NAV */
+nav{position:sticky;top:0;z-index:999;background:linear-gradient(180deg, rgba(11,15,21,.92), rgba(11,15,21,.6) 60%, transparent);
+backdrop-filter:saturate(130%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,48px)}
+.logo{display:flex;gap:12px;align-items:center}
+.logo svg{width:40px;height:40px;filter:drop-shadow(0 6px 14px rgba(33,212,253,.35))}
+.brand{font-family:'Russo One',sans-serif;letter-spacing:.5px}
+.badge{font-size:12px;padding:4px 8px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#001225;margin-left:10px}
+.nav-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:var(--glass);box-shadow:var(--shadow);transition:.25s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.28)}
+.btn.primary{border:none;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#001225;font-weight:800}
+.btn.small{padding:8px 12px}
+/* HERO */
+.hero{position:relative;isolation:isolate;background:
+linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.8)), url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="%2321D4FD"/><stop offset="1" stop-color="%23B721FF"/></linearGradient></defs><g opacity=".14"><circle r="420" cx="200" cy="200" fill="url(%23g)"/><circle r="380" cx="1400" cy="200" fill="url(%23g)"/><circle r="480" cx="900" cy="760" fill="url(%23g)"/></g></svg>') no-repeat center/cover,var(--grad)}
+.hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;min-height:72vh}
+.hero h1{font-family:'Russo One',sans-serif;font-size:clamp(28px,5vw,54px);margin:0 0 10px}
+.hero p{font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0 0 26px}
+.card{border-radius:var(--radius);background:var(--glass);border:1px solid rgba(255,255,255,.1);padding:18px;box-shadow:var(--shadow)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.kpis .k{padding:14px;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:center;background:rgba(0,0,0,.25)}
+.k .v{font-weight:800;font-size:22px}
+.k .l{font-size:12px;color:var(--muted)}
+/* SERVICES */
+h2{font-family:'Russo One',sans-serif;font-size:clamp(22px,3.6vw,34px);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:980px){.hero .container{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr 1fr}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.tile{padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02))}
+.tile h3{margin:0 0 8px;font-size:18px}
+.price{font-weight:800}
+.small{color:var(--muted);font-size:13px}
+.list{display:grid;gap:10px}
+.list li{display:flex;gap:10px;align-items:flex-start;list-style:none}
+.bullet{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand2));margin-top:6px;flex:0 0 auto}
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:980px){.features{grid-template-columns:1fr}}
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:980px){.gallery{grid-template-columns:1fr 1fr}}
+.gal-item{aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06)}
+.gal-item img{width:100%;height:100%;object-fit:cover}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+@media (max-width:980px){.contact-grid{grid-template-columns:1fr}}
+.map{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);min-height:320px;background:#0a0f14}
+.footer{padding:28px clamp(16px,4vw,48px);border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+.footer .container{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tag{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px}
+.hr{height:1px;background:linear-gradient(90deg, rgba(255,255,255,.0), rgba(255,255,255,.2), rgba(255,255,255,.0));margin:20px 0}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <!-- Inline SVG Logo -->
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#21D4FD"/>
+            <stop offset="1" stop-color="#B721FF"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#g1)" opacity=".25"/>
+        <path d="M45 20c-8-8-24-5-27 4-1 3 1 6 5 6h8c2 0 4 2 4 4s-2 4-4 4h-14" stroke="url(#g1)" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M22 44c8 8 24 5 27-4 1-3-1-6-5-6h-8" stroke="url(#g1)" stroke-width="5" stroke-linecap="round" fill="none" opacity=".9"/>
+        <text x="32" y="36" text-anchor="middle" font-size="14" font-family="Russo One" fill="#e8f0ff">S</text>
+      </svg>
+      <div>
+        <div class="brand">Schtolzer</div>
+        <div class="small">Автомойка • Подольск</div>
+      </div>
+      <span class="badge">5,0 ★</span>
+    </div>
+    <div class="nav-cta">
+      <a class="btn small" href="#services">Услуги</a>
+      <a class="btn small" href="#prices">Цены</a>
+      <a class="btn small" href="#contact">Контакты</a>
+      <a class="btn primary" href="https://wa.me/79663004397?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BC%D0%BE%D0%B9%D0%BA%D1%83%2F%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D1%83." target="_blank" rel="noopener">Записаться в WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <section>
+    <div class="container">
+      <div>
+        <h1>Автомойка & Детейлинг<br>в Подольске</h1>
+        <p>Бережная <b>бесконтактная</b> и <b>ручная</b> мойка, глубокая химчистка салона, полировка и защитные покрытия. Быстрая запись, честные цены, аккуратный сервис.</p>
+        <div class="nav-cta">
+          <a class="btn primary" href="https://wa.me/79663004397?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F" target="_blank" rel="noopener">Запись в WhatsApp</a>
+          <a class="btn" href="tel:+79663004397">Позвонить: +7 (966) 300‑43‑97</a>
+          <a class="btn" href="#prices">Смотреть цены</a>
+        </div>
+        <div class="kpis">
+          <div class="k"><div class="v">2</div><div class="l">моечных зоны</div></div>
+          <div class="k"><div class="v">550–2000 ₽</div><div class="l">мойка кузова</div></div>
+          <div class="k"><div class="v">Wi‑Fi</div><div class="l">кофе и ожидание</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="list">
+          <li><span class="bullet"></span><span><b>Адрес:</b> просп. Юных Ленинцев, 1, стр. 8, Подольск</span></li>
+          <li><span class="bullet"></span><span><b>Время работы:</b> ежедневно до 22:00</span></li>
+          <li><span class="bullet"></span><span><b>Оплата:</b> наличные, карта</span></li>
+          <li><span class="bullet"></span><span><b>Типы мойки:</b> бесконтактная, ручная</span></li>
+          <li><span class="bullet"></span><span><b>Связь:</b> WhatsApp и телефон</span></li>
+        </div>
+        <div class="hr"></div>
+        <div class="small">Особенности: парковка, зона ожидания, Wi‑Fi, нанесение воска, чернение резины, выезд на дом, химчистка на дому.</div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<main>
+  <section id="services">
+    <div class="container">
+      <h2>Услуги</h2>
+      <div class="grid">
+        <div class="tile">
+          <h3>Бесконтактная мойка</h3>
+          <p class="small">Деликатная химия, двухфазная схема, бережём ЛКП.</p>
+        </div>
+        <div class="tile">
+          <h3>Ручная мойка</h3>
+          <p class="small">Премиальные губки и микрофибра, отдельные ведра.</p>
+        </div>
+        <div class="tile">
+          <h3>Химчистка салона</h3>
+          <p class="small">Пятна, устранение запахов, парогенератор. Есть <b>химчистка на дому</b>.</p>
+        </div>
+        <div class="tile">
+          <h3>Полировка кузова</h3>
+          <p class="small">Восстановление блеска, удаление матовости и паутинок.</p>
+        </div>
+        <div class="tile">
+          <h3>Нанесение защитного воска</h3>
+          <p class="small">Гидрофоб, легче мыть, дольше блеск.</p>
+        </div>
+        <div class="tile">
+          <h3>Чернение резины</h3>
+          <p class="small">Глубокий, аккуратный, без липкости.</p>
+        </div>
+        <div class="tile">
+          <h3>Мойка стёкол и витрин</h3>
+          <p class="small">Кристальная прозрачность без разводов.</p>
+        </div>
+        <div class="tile">
+          <h3>Выездной сервис</h3>
+          <p class="small">Приезжаем к вам: мойка, химчистка, уход.</p>
+        </div>
+        <div class="tile">
+          <h3>Парковка и ожидание</h3>
+          <p class="small">Wi‑Fi, кофе, тёплая зона ожидания.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="container">
+      <h2>Цены</h2>
+      <div class="grid">
+        <div class="tile">
+          <h3>Мойка кузова</h3>
+          <div class="price">от 550 до 2000 ₽</div>
+          <div class="small">в зависимости от класса авто</div>
+        </div>
+        <div class="tile">
+          <h3>Химчистка салона</h3>
+          <div class="price">по запросу</div>
+          <div class="small">точно озвучим по WhatsApp</div>
+        </div>
+        <div class="tile">
+          <h3>Полировка</h3>
+          <div class="price">по запросу</div>
+          <div class="small">осмотр авто на месте</div>
+        </div>
+        <div class="tile">
+          <h3>Воск / Гидрофоб</h3>
+          <div class="price">по запросу</div>
+          <div class="small">подбираем под ЛКП</div>
+        </div>
+        <div class="tile">
+          <h3>Выезд на дом</h3>
+          <div class="price">по запросу</div>
+          <div class="small">стоимость зависит от адреса</div>
+        </div>
+        <div class="tile">
+          <h3>Доп. услуги</h3>
+          <div class="small">мойка двигателя, ковров, нанесение антидождя и др.</div>
+        </div>
+      </div>
+      <div style="margin-top:16px" class="nav-cta">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/79663004397?text=%D0%9E%D1%86%D0%B5%D0%BD%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%3A%20">Спросить цену в WhatsApp</a>
+        <a class="btn" href="tel:+79663004397">Позвонить</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Фотографии</h2>
+      <div class="gallery">
+        <!-- Placeholders (replace src with реальными фото) -->
+        <div class="gal-item"><img alt="Бокс мойки" src="https://images.unsplash.com/photo-1592853625600-127d14b0b3c5?q=80&w=1600&auto=format&fit=crop"/></div>
+        <div class="gal-item"><img alt="Ручная мойка" src="https://images.unsplash.com/photo-1629203853284-8d0a18c4de36?q=80&w=1600&auto=format&fit=crop"/></div>
+        <div class="gal-item"><img alt="Детейлинг" src="https://images.unsplash.com/photo-1623065425906-5f3a65bb32b7?q=80&w=1600&auto=format&fit=crop"/></div>
+        <div class="gal-item"><img alt="Интерьер салона" src="https://images.unsplash.com/photo-1549921296-3c8b2a77a6cf?q=80&w=1600&auto=format&fit=crop"/></div>
+      </div>
+      <div class="small" style="margin-top:10px">Хочешь — заменю на твои реальные фото (просто скинь их сюда, я подгоню размеры).</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <div class="contact-grid">
+        <div class="tile">
+          <div class="list">
+            <li><span class="bullet"></span><span><b>Телефон:</b> <a href="tel:+79663004397">+7 (966) 300‑43‑97</a></span></li>
+            <li><span class="bullet"></span><span><b>WhatsApp:</b> <a target="_blank" rel="noopener" href="https://wa.me/79663004397">написать</a></span></li>
+            <li><span class="bullet"></span><span><b>Адрес:</b> просп. Юных Ленинцев, 1, стр. 8, Подольск</span></li>
+            <li><span class="bullet"></span><span><b>График:</b> ежедневно до 22:00</span></li>
+            <li><span class="bullet"></span><span><b>Оплата:</b> наличные, карта</span></li>
+          </div>
+          <div class="hr"></div>
+          <div class="nav-cta">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/79663004397?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BC%D0%BE%D0%B9%D0%BA%D1%83%20%F0%9F%9A%97">Записаться</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%9F%D0%BE%D0%B4%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF.%20%D0%AE%D0%BD%D1%8B%D1%85%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%86%D0%B5%D0%B2%2C%201%2C%20%D1%81%D1%82%D1%80.%208">Маршрут в Яндекс.Картах</a>
+          </div>
+        </div>
+        <div class="map">
+          <!-- Simple map embed via Yandex static map link -->
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2b7f2e6d7d0a2e3a37f7b23b2f3a3b5c5fbfb0f8f8f6d9d2a7f7f3f1a9f9a9a&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div>&copy; <span id="y"></span> Schtolzer — Автомойка, Подольск</div>
+    <div class="tag">Бесконтактная • Ручная • Детейлинг</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
